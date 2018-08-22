@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Spin-off of "KACP Challenge Council"</title>
+        <title>KACP Challenge Council</title>
         <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-        <style type="text/css">
+        <style>
             * {
                 margin: 0;
                 padding: 0;
@@ -84,7 +83,7 @@
                 transform: translate3d(200px, 0, 0);
             }
             
-            #contests-content, #contest1, #contest2, #contest3, #contest4, #contest5, #members-content, #faq-content {
+            #contests-content, #contest1, #contest2, #contest3, #contest4, #contest5, #contest6, #members-content, #faq-content {
                 display: none;
             }
             
@@ -96,19 +95,21 @@
                 margin-bottom: 20px;
                 font-family: 'Spectral SC', serif;
                 font-weight: bold;
-                border-radius: 15px;
+                border-radius: 10px;
             }
             
             .info {
                 background-color: white;
                 color: black;
-                font-family: 'Spectral SC', serif;
-                font-size: 20px;
+                font-family: "Montserrat", serif;
+                text-align: left;
+                font-size: 18px;
                 line-height: 2em;
-                width: 80%;
                 margin: auto;
                 margin-top: 30px;
-                padding: 20px 10pxpx;
+                padding: 5px 0px;
+                width: 80%;
+                margin: auto;
                 border-radius: 10px;
             }
             
@@ -124,7 +125,7 @@
                 background-color: #11bbff;
                 background-color: #474B4F;
                 padding: 10px 0px;
-                border-radius: 15px;
+                border-radius: 10px;
                 font-weight: bold;
             }
             
@@ -134,6 +135,7 @@
                 margin: auto;
                 margin: 20px 0px;
                 border-radius: 10px;
+                position: relative;
             }
             
             .news-title {
@@ -175,11 +177,15 @@
                 border: 2px solid #76b221;
             }
             
-            .new-post-tag {
+            .news-post.new-post::after {
+                content: "New Post";
+                font-weight: bold;
+                font-size: 13px;
                 float: right;
                 clear: right;
-                margin-right: 15px;
-                margin-top: 0px;
+                right: 15px;
+                position: absolute;
+                top: 0;
                 padding: 10px 10px;
                 border: 2px solid #76b221;
                 border-radius: 0px 0px 10px 10px;
@@ -219,6 +225,18 @@
             
             .current-contest {
                 border: 1px solid #76b221;
+            }
+            
+            .contest-box.current-contest::after {
+                content: "Current Contest";
+                font-size: 12px;
+                display: block;
+                border: 2px solid #76b221;
+                border-radius: 10px;
+                width: 75%;
+                margin: auto;
+                font-family: 'Spectral SC';
+                color: #76b221;
             }
             
             .current-contest-tag {
@@ -282,7 +300,7 @@
                 width: 80%;
                 margin: auto;
                 margin-top: 40px;
-                border-radius: 15px;
+                border-radius: 10px;
             }
             
             .results {
@@ -336,6 +354,7 @@
                 font-size: 18px;
                 font-family: 'Montserrat', serif;
                 padding-bottom: 0px;
+                line-height: 1.7em;
             }
             
             .winning-program-old {
@@ -356,8 +375,8 @@
             }
             
             .explanation {
+                clear: both;
                 margin-top: 25%;
-                padding-bottom: 10;
             }
             
             .hidden {
@@ -450,10 +469,10 @@
             </div>
             
             <ul>
-                <li><a onClick="displayContent('home-content')" href="#" id="home">Home</a></li>
-                <li><a onClick="displayContent('contests-content')" href="#" id="contests">Contests</a></li>
-                <li><a onClick="displayContent('members-content')" href="#" id="members">Members</a></li>
-                <li><a onClick="displayContent('faq-content')" href="#" id="faq">FAQ</a></li>
+                <li class="nav-option"><a onClick="displayContent('home-content')" href="#" id="home">Home</a></li>
+                <li class="nav-option"><a onClick="displayContent('contests-content')" href="#" id="contests">Contests</a></li>
+                <li class="nav-option"><a onClick="displayContent('members-content')" href="#" id="members">Members</a></li>
+                <li class="nav-option"><a onClick="displayContent('faq-content')" href="#" id="faq">FAQ</a></li>
             </ul>
         </nav>
         
@@ -481,6 +500,18 @@
                 -->
                 
                 <div class="news-post new-post">
+                    <h3 class="news-title">Board Games Results</h3>
+                    <h5 class="news-date">August 4, 2018</h5>
+                    <p class="news-content">Results for July's Board Games contest have been posted! Visit the contests page on this program to view them.<br><br>For this contest we included some of the judges' comments on the winning programs, so let us know what you think about this added feature!</p>
+                </div>
+                
+                <div class="news-post">
+                    <h3 class="news-title">August Contest Released</h3>
+                    <h5 class="news-date">August 3, 2018</h5>
+                    <p class="news-content">The August contest has been released! For this webpage contest, we want to know who inspires you! More information is on the contests tab of this program and the August contest program. <br><br> The results for the July contest, Board Games, are coming soon (I promise!), so keep your eye open for those today and tomorrow.</p>
+                </div>
+                
+                <div class="news-post">
                     <h3 class="news-title">Results for Vintage Space and the July Contest</h3>
                     <h5 class="news-date">July 1, 2018</h5>
                     <p class="news-content">Results have been posted for the June contest, Vintage Space. To view them visit the "Contests" page in this program and click on Vintage Space. The July contest should be posted tomorrow (July 2nd), so stay tuned for that!</p>
@@ -540,7 +571,7 @@
                 </div>
                 
                 <!-- Adds new post tag to all posts with the "new-post" class. -->
-                <script>
+                <!--<script>
                     var tag = document.createElement("h5");
                     tag.className += "new-post-tag";
                     
@@ -552,7 +583,7 @@
                         newPosts[i].prepend(tag);
                         
                     }
-                </script>
+                </script>-->
             </div>
         </div>
         
@@ -570,7 +601,6 @@
                 After adding the box, create a new page for the contest beneath the Contests code. contestID should be the same as the id used on the contest page div.
                 
                 Give div the current-contest class to highlight in green. 
-                Add <h5 class="current-contest-tag">Current Contest</h5> after the img tag to display the current tag.
                 -->
                 
                 <div onClick="displayContent('contest1')" class="contest-box col1">
@@ -593,10 +623,14 @@
                     <img src="https://www.khanacademy.org/computer-programming/contest-vintage-space/6387710199103488/latest.png"/>
                 </div>
                 
-                <div onClick="displayContent('contest5')" class="contest-box col1 current-contest">
+                <div onClick="displayContent('contest5')" class="contest-box col1">
                     <h4>Board Game</h4>
                     <img src="https://www.khanacademy.org/computer-programming/contest-board-game/5722978952445952/latest.png"/>
-                    <h5 class="current-contest-tag">Current Contest</h5>
+                </div>
+                
+                <div onClick="displayContent('contest6')" class="contest-box col2 current-contest">
+                    <h4>Inspirational Person</h4>
+                    <img src="https://www.khanacademy.org/computer-programming/contest-inspirational-person/4789396223328256/latest.png"/>
                 </div>
             </div>
         </div>
@@ -683,19 +717,19 @@
                 <div class="winner-box">
                     <h3>Advanced Bracket</h3>
                     <div class="winning-program-old bold-top">
-                        <img src="https://www.khanacademy.org/computer-programming/desolate-plains/5259272837431296/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/desolate-plains/5259272837431296/latest.png" alt="MKZD's Desolate Plains program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/desolate-plains/5259272837431296" target="_blank">Desolate Plains</a></p>
                         <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_1142137970772683782317032" target="_blank">M K Z D</a></p>
                     </div>
                     
                     <div class="winning-program-old">
-                        <img src="https://www.khanacademy.org/computer-programming/the-crystals-of-the-cliff/6517568225443840/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/the-crystals-of-the-cliff/6517568225443840/latest.png" alt="lilou.tissot's The Crystals of the Cliff program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/the-crystals-of-the-cliff/6517568225443840" target="_blank">The crystals of the cliff</a></p>
                         <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_1021324359913220136417776" target="_blank">lilou.tissot</a></p>
                     </div>
                     
                     <div class="winning-program-old">
-                        <img src="https://www.khanacademy.org/computer-programming/nibel/5974851295674368/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/nibel/5974851295674368/latest.png" alt="Weather's Nibel program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/nibel/5974851295674368" target="_blank">Nibel</a></p>
                         <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_854228745598935932978211" target="_blank">Weather</a></p>
                     </div>
@@ -704,19 +738,19 @@
                 <div class="winner-box">
                     <h3>Intermediate Bracket</h3>
                     <div class="winning-program-old bold-top">
-                        <img src="https://www.khanacademy.org/computer-programming/peaceful-lake/5266605858652160/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/peaceful-lake/5266605858652160/latest.png" alt="Talha Muhib's Peaceful Lake program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/peaceful-lake-entry/4941480693104640" target="_blank">Peaceful Lake (Entry)</a></p>
                         <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_656378252857558310639450" target="blank">Talha Muhib</a></p>
                     </div>
                     
                     <div class="winning-program-old">
-                        <img src="https://www.khanacademy.org/computer-programming/the-land-behind-the-wall-entry/4741568386859008/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/the-land-behind-the-wall-entry/4741568386859008/latest.png" alt="Sadie's The Land Behind the Wall program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/the-land-behind-the-wall-entry/4741568386859008" target="_blank">The Land Behind the Wall (Entry)</a></p>
                         <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_860202269032343181860752" target="blank">Sadie</a></p>
                     </div>
                     
                     <div class="winning-program-old">
-                        <img src="https://www.khanacademy.org/computer-programming/trees-of-the-roasting-desert/5670494965628928/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/trees-of-the-roasting-desert/5670494965628928/latest.png" alt="Fisch's Trees of the Roasting Desert program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/trees-of-the-roasting-desert/5670494965628928" target="_blank">Trees of the Roasting Desert</a></p>
                         <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_1064100141750272158849190" target="blank">Fisch</a></p>
                     </div>
@@ -725,19 +759,19 @@
                 <div class="winner-box">
                     <h3>Beginner Bracket</h3>
                     <div class="winning-program-old">
-                        <img src="https://www.khanacademy.org/computer-programming/contest-fantasy-landscape-entry/4563911927955456/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/contest-fantasy-landscape-entry/4563911927955456/latest.png" alt="Madelena Bickley's Fantasy Landscape Entry program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/contest-fantasy-landscape-entry/4563911927955456" target="_blank">Contest: Fantasy Landscape Entry</a></p>
-                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_659179509711507540473310" target="blank">ℳ𝒶𝒹ℯ𝓁ℯ𝓃𝒶 ℬ𝒾𝒸𝓀𝓁ℯ𝓎</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_659179509711507540473310" target="blank">Madelena Bickley</a></p>
                     </div>
                         
                     <div class="winning-program-old">
-                        <img src="https://www.khanacademy.org/computer-programming/backup-image/6586967870701568/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/backup-image/6586967870701568/latest.png" alt="Australism's Iceland program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/iceland/4577868615024640" target="_blank">Iceland</a></p>
-                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_508437528847428303834368" target="blank">𝒜𝓊𝓈𝓉𝓇𝒶𝓁𝒾𝓈𝓂</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_508437528847428303834368" target="blank">Australism</a></p>
                     </div>
                     
                     <div class="winning-program-old">
-                        <img src="https://www.khanacademy.org/computer-programming/floating-island/4940775726022656/latest.png">
+                        <img src="https://www.khanacademy.org/computer-programming/floating-island/4940775726022656/latest.png" alt="khan.laiba's Floating Island program thumbnail">
                         <p><a href="https://www.khanacademy.org/computer-programming/floating-island/4940775726022656" target="_blank">Floating Island</a></p>
                         <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_404836506843553847723824" target="blank">khan.laiba</a></p>
                     </div>
@@ -1020,18 +1054,105 @@
                 <a href="https://www.khanacademy.org/computer-programming/contest-board-game/5722978952445952" target="_blank" class="contest-link">View contest page here.</a>
             </div>
             
+            <h2 class="result-heading">Results</h2>
+            <div class="results">
+                <p class="results-message">Thanks to everyone who participated in this contest! We saw a lot of really amazing entries, which made our job very difficult! After lots of thinking we finally settled on these winners. We hope you all enjoyed creating your board games, and we certainly enjoyed playing them : ) Remember: You never lose. Either you win or you learn.</p>
+                
+                <div class="winner-box">
+                    <h3>Advanced Bracket</h3>
+                    
+                    <div class="winning-program bold-top">
+                        <img src="https://www.khanacademy.org/computer-programming/kalah/5146972292153344/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/kalah/5146972292153344" target="_blank">Kalah</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_673263829029683148315313" target="_blank">Ed</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>This game has a really interesting AI player with multiple skill levels, with the higher skilled AIs proving to be quite challenging! The smooth animations and design worked very well together, and gave the game great visual appeal. Playing this version of Kalah felt just like playing the real game!</p>
+                    </div>
+                    <div class="winning-program">
+                        <img src="https://www.khanacademy.org/computer-programming/corners-game/5874817536655360/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/corners-game/5874817536655360" target="_blank">Corners</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_79492645558798574591143" target="_blank">BB-8</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>The ability to change the number of players, and whether the players are human or AI players, made this game really interesting. The gameplay was very nice overall, and the program uses fun colors and designs. This is also a game that most people are not familiar with, so it was nice to see something new!</p>
+                    </div>
+                    <div class="winning-program">
+                        <img src="https://www.khanacademy.org/computer-programming/tic-tac-toe-3d/6085443443785728/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/tic-tac-toe-3d/6085443443785728" target="_blank">Tic Tac Toe 3D</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_568966039898183164390035" target="_blank">Luke and Jacob</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>This program put a really interesting twist on a classic game. The introduction of the 3D element to Tic Tac Toe completely changed the overall strategy and gameplay. This program is very unique and demonstrates great CS skill!</p>
+                    </div>
+                </div>
+                
+                <div class="winner-box">
+                    <h3>Intermediate Bracket</h3>
+                    
+                    <div class="winning-program bold-top">
+                        <img src="https://www.khanacademy.org/computer-programming/guess-who-crime-edition/6581135536848896/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/guess-who-crime-edition/6581135536848896" target="_blank">Guess Who? CRIME EDITION</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_794864070338193862176253" target="_blank">AquA217</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>This program puts a slight twist on the classic Guess Who? game by including a background crime story. The playability in this program is great, and the game really makes you think!</p>
+                    </div>
+                    <div class="winning-program">
+                        <img src="https://www.khanacademy.org/computer-programming/noughts-and-crosses-animated/5900364455116800/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/noughts-and-crosses-animated/5900364455116800" target="_blank">Noughts And Crosses (Animated)</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_404640346835329661583586" target="_blank">Morgan</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>This version of Tic Tac Toe has great interactivity and playability. The animations are really cool, and the code is written very nicely!</p>
+                    </div>
+                    <div class="winning-program">
+                        <img src="https://www.khanacademy.org/computer-programming/chinese-checkers/4791920171974656/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/chinese-checkers/4791920171974656" target="_blank">Chinese Checkers</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_1180834839290345292639833" target="_blank">pinkpuppy22</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>The simplistic design of this rendering of Chinese Checkers has great visual appeal. The colors fit very nicely together, and the background shadow helps give the program depth and a 3D feel. Overall, the graphic has a very nice clean and modern look!</p>
+                    </div>
+                </div>
+                
+                <div class="winner-box">
+                    <h3>Beginner Bracket</h3>
+                    
+                    <div class="winning-program bold-top">
+                        <img src="https://www.khanacademy.org/computer-programming/my-entry-of-contest-board-game/5455915465867264/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/my-entry-of-contest-board-game/5455915465867264" target="_blank">My entry of "Contest: Board Game"</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_547620112972655231391460" target="_blank">Grace and Gityalila</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>This graphic has great attention for detail, and includes all of the text, cards, and game pieces from the original Monopoly. The colors and style look just like the real game!</p>
+                    </div>
+                    <div class="winning-program">
+                        <img src="https://www.khanacademy.org/computer-programming/scrabble-board-game/4858769737809920/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/scrabble-board-game/4858769737809920" target="_blank">Scrabble Board Game</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_676592601526721952715671" target="_blank">ᗰᗩᖇGᗩᖇETT</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>This graphic includes lots of detail and provides an accurate representation of the real board. The colors look very nice together, and whoever was playing the game knows that Khan Academy is amazing!</p>
+                    </div>
+                    <div class="winning-program">
+                        <img src="https://www.khanacademy.org/computer-programming/the-rook-not-very-good-entry/5357549765558272/latest.png">
+                        <p><a href="https://www.khanacademy.org/computer-programming/the-rook-not-very-good-entry/5357549765558272" target="_blank">THE ROOK</a></p>
+                        <p><strong>Created By: </strong><a href="https://www.khanacademy.org/profile/kaid_125101298320750606448167" target="_blank">Rocket</a></p>
+                        <p class="explanation"><strong>Why we chose this program: </strong><br>This program includes an informational aspect that teaches the user about a chess piece, which fits very nicely with this contest's focus on learning! The drawings of the rooks are also rendered very well!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contest 6 page (Inspirational Person) -->
+        <div id="contest6" class="content">
+            <h1 class="heading">Contest: Inspirational Person</h1>
+            
+            <div class="contest-info">
+                <h3>Description</h3>
+                <p>Whether it's a celebrity, historical figure, or a family member, we all have someone that we look up to. Inspiring people are all around us, and we want to know who inspires you!</p>
+                <p>In this webpage contest, create a webpage that highlights your favorite person (or maybe multiple people) and why they inspire you. Include information about the person such as life events, their historical significance, photographs, or maybe even your own drawing of the person!</p>
+                <p>Deadline is August 25th, 2018. We will judge in the week after that, and award based on creativity, complexity, and clean commented code. Projects should be submitted as spin-offs of this project. The top winners in each bracket will get a Golden Winston!</p>
+                <p>Attribute any parts of your code you didn't write. Images should be taken from KA's image library and wikipedia only. As always, have fun!</p>
+                
+                <h3>Deadline</h3>
+                <p>All projects must be submitted by August 25th, 2018</p>
+                
+                <a href="https://www.khanacademy.org/computer-programming/contest-inspirational-person/4789396223328256" target="_blank" class="contest-link">View contest page here.</a>
+            </div>
+            
             <h2 class="result-heading hidden">Results</h2>
             <div class="results hidden">
                 <p class="results-message"></p>
                 
                 <div class="winner-box">
                     <h3>Advanced Bracket</h3>
-            <!--    <div class="winning-program bold-top">
-                        <img src="winningProgramLink/latest.png">
-                        <p><a href="Winning Program Link" target="_blank">Program Title</a></p>
-                        <p><strong>Created By: </strong><a href="linkToAuthorProfile" target="_blank">Author Name</a></p>
-                        <p class="explanation"></p>
-                    </div>-->
+                    
                 </div>
                 
                 <div class="winner-box">
@@ -1180,7 +1301,7 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <!-- Nav script -->
-        <script type="text/javascript">
+        <script>
             (function() {
                 var bodyEl = $('body'),
                 navToggleBtn = bodyEl.find('.nav-toggle-btn');
@@ -1189,6 +1310,13 @@
                     bodyEl.toggleClass('active-nav');
                     e.preventDefault();
                     
+                });
+                
+                navOption = bodyEl.find('.nav-option');
+                
+                navOption.on('click', function(e) {
+                    bodyEl.toggleClass('active-nav');
+                    e.preventDefault();
                 });
                 
             })();
@@ -1219,6 +1347,7 @@
                 var contest3 = document.getElementById('contest3');
                 var contest4 = document.getElementById('contest4');
                 var contest5 = document.getElementById('contest5');
+                var contest6 = document.getElementById('contest6');
                 
                 //Page selected
                 var activePage = document.getElementById(currentPage)
@@ -1235,6 +1364,7 @@
                 contest3.style.display = "none";
                 contest4.style.display = "none";
                 contest5.style.display = "none";
+                contest6.style.display = "none";
                 
                 //Show current page
                 activePage.style.display = "block";
