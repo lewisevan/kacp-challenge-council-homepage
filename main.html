@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>KACP Challenge Council</title>
-        <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
         <style>
             * {
                 margin: 0;
@@ -13,69 +13,50 @@
             body {
                 font-family: serif;
                 overflow-x: hidden;
-                background-color: #EFEFEF;
+                background-color: #f7f8fa;
                 height: 2000px;
+                overflow: hidden;
+            }
+            
+            a {
+                color: #1865F2;
             }
             
             nav {
                 position: fixed;
-                z-index: 1000;
-                top: 0;
-                bottom: 0;
-                width: 200px;
-                background-color: #A9A9A9;
-                background-color: rgb(219, 219, 219);
-                transform: translate3d(-200px, 0, 0);
-                transition: transform 0.4s ease;
-            }
-            
-            .active-nav nav {
-                transform: translate3d(0, 0, 0);
+                background-color: #0A2A66;
+                width: 100%;
+                z-index: 10;
+                height: 8%;
+                display: none;
             }
             
             nav ul {
-                list-style: none;
-                margin-top: 5px;
+                width: 90%;
+                margin: auto;
+            }
+            
+            nav ul li {
+                display: inline-block;
+                margin: 2.5% 7.3%;
             }
             
             nav ul li a {
+                color: white;
                 text-decoration: none;
-                display: block;
-                text-align: center;
-                font-family: 'Spectral SC', serif;
-                color: black;
-                padding: 10px 0;
-                border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+                font-family: Lato;
+                font-weight: bold;
             }
             
-            .nav-toggle-btn {
-                display: block;
-                position: absolute;
-                left: 200px;
-                width: 40px;
-                height: 40px;
-                margin-left: 10px;
-                margin-top: 10px;
-            }
-            
-            .nav-toggle-btn:hover {
-                cursor: pointer;
-            }
-            
-            .nav-toggle-btn span {
-                display: block;
-                width: 30px;
-                height: 5px;
-                background: #151719;
-                margin: 3px 0px;
-                border-radius: 5px;
+            .nav-selected {
+                border-bottom: 1px solid white;
             }
             
             .content {
-                padding-top: 10px;
+                padding-top: 85px;
                 transition: transform 0.4s ease;
                 text-align: center;
-                color: #fff;
+                color: white;
                 display: none;
             }
             
@@ -83,50 +64,103 @@
                 transform: translate3d(200px, 0, 0);
             }
             
-            #home-content {
+            #launch {
+                padding-top: 85px;
+                text-align: center;
+                color: white;
+                background-color: #0A2A66;
+                width: 100%;
+                height: 100%;
                 display: block;
+                position: fixed;
+                z-index: 100;
+                
+                opacity: 1;
+                -webkit-transition: all 1.0s ease-in-out;
+                -moz-transition: all 1.0s ease-in-out;
+                -ms-transition: all 1.0s ease-in-out;
+                -o-transition: all 1.0s ease-in-out;
+                transition: all 1.0s ease-in-out;
+            }
+            
+            #launch-container {
+                height: 51%;
+                width: 85%;
+                margin: auto;
+                position: absolute;
+                top: 27%;
+                left: 7.5%;
+            }
+            
+            #launch-heading {
+                width: 85%;
+                height: 24%;
+                position: absolute;
+                top: 1%;
+                left: 7.5%;
+            }
+            
+            #launch-heading svg {
+                position: absolute;
+                left: 41%;
+                top: 1%;
+            }
+            
+            #launch h1 {
+                font-family: 'Lato';
+                position: absolute;
+                font-size: 39px;
+                width: 100%;
+                top: 59%;
+                left: 0%;
+            }
+            
+            #launch #info {
+                display: block;
+                font-family: 'Lato';
+                font-size: 27px;
+                height: 48%;
+                top: 26%;
+                left: 8%;
+                background-color: #37C5FD;
+                border-radius: 5px;
+                padding: 42px 11px;
+            }
+            
+            #launch #info p {
+                display: block;
+                margin-top: 2.5%;
+            }
+            
+            #launch a {
+                color: white;
+                font-family: 'Lato';
+                font-size: 22px;
+                display: block;
+                background-color: #FA50AE;
+                padding: 12px 214px;
+                border-radius: 5px;
+                margin-top: 10.5%;
+            }
+            
+            #launch a:hover {
+                cursor: pointer;
             }
             
             .heading {
-                background-color: #ff3b3f;
-                background-color: #76b221;
-                width: 80%;
+                background-color: #1865F2;
+                width: 85%;
                 margin: auto;
                 margin-bottom: 20px;
-                font-family: 'Spectral SC', serif;
+                font-family: 'Lato', serif;
                 font-weight: bold;
-                border-radius: 10px;
-            }
-            
-            .info {
-                background-color: white;
-                color: black;
-                font-family: "Montserrat", serif;
-                text-align: left;
-                font-size: 18px;
-                line-height: 2em;
-                margin: auto;
-                margin-top: 30px;
-                padding: 5px 0px;
-                width: 80%;
-                margin: auto;
-                border-radius: 10px;
+                padding: 6px 0px;
+                border-radius: 5px;
             }
             
             .news {
-                width: 80%;
+                width: 85%;
                 margin: auto;
-                margin-top: 80px;
-                
-            }
-            
-            .news-heading {
-                font-family: 'Spectral SC', serif;
-                background-color: #11bbff;
-                background-color: #474B4F;
-                padding: 10px 0px;
-                border-radius: 10px;
-                font-weight: bold;
             }
             
             .news-post {
@@ -134,7 +168,8 @@
                 color: black;
                 margin: auto;
                 margin: 20px 0px;
-                border-radius: 10px;
+                border-radius: 5px;
+                border: 1px solid lightgrey;
                 position: relative;
             }
             
@@ -148,19 +183,19 @@
                 margin: auto;
                 width: 70%;
                 margin-bottom: 0px;
-                font-family: 'Spectral SC', serif;
+                font-family: 'Lato', serif;
             }
             
             .news-date {
                 clear: left;
                 width: 95%;
                 margin: auto;
-                border-bottom: 1px solid;
+                border-bottom: 1px solid #21242C;
                 text-align: left;
                 padding: 10px;
-                padding-top: 0px;
+                padding-top: 5px;
                 margin-top: 0px;
-                font-family: 'Spectral SC', serif;
+                font-family: 'Montserrat', serif;
             }
             
             .news-content {
@@ -174,11 +209,11 @@
             }
             
             .new-post {
-                border: 2px solid #76b221;
+                border: 2px solid #1865F2;
             }
             
             .news-post.new-post::after {
-                content: "New Post";
+                content: "NEW POST";
                 font-weight: bold;
                 font-size: 13px;
                 float: right;
@@ -187,15 +222,15 @@
                 position: absolute;
                 top: 0;
                 padding: 10px 10px;
-                border: 2px solid #76b221;
+                border: 2px solid #1865F2;
                 border-radius: 0px 0px 10px 10px;
                 border-top: none;
-                font-family: 'Spectral SC';
-                color: #76b221;
+                font-family: 'Lato';
+                color: #1865F2;
             }
             
             #contest-board {
-                width: 80%;
+                width: 85%;
                 margin: auto;
             }
             
@@ -206,38 +241,40 @@
                 width: 44%;
                 height: 250px;
                 background-color: white;
-                color: black;
-                font-family: 'Spectral SC';
+                color: #21242C;
+                font-family: 'Lato';
                 font-size: 14px;
                 padding: 10px;
                 padding-bottom: 1.8%;
-                border-radius: 15px;
-                border: 1px solid white;
+                border-radius: 5px;
+                border: 1px solid lightgrey;
             }
             
             .contest-box:hover {
-                border: 1px solid rgb(176, 176, 176);
+                border: 1px solid #21242C;
                 cursor: pointer;
             }
             
             .contest-box img {
+                margin-top: 8px;
                 max-width: 200px;
             }
             
             .current-contest {
-                border: 1px solid #76b221;
+                border: 1px solid #1865F2;
             }
             
             .contest-box.current-contest::after {
-                content: "Current Contest";
+                content: "CURRENT CONTEST";
                 font-size: 12px;
                 display: block;
-                border: 2px solid #76b221;
+                border: 2px solid #1865F2;
                 border-radius: 10px;
                 width: 75%;
                 margin: auto;
-                font-family: 'Spectral SC';
-                color: #76b221;
+                margin-top: 4px;
+                font-family: 'Lato';
+                color: #1865F2;
             }
             
             .current-contest-tag {
@@ -265,13 +302,14 @@
                 margin-top: 10px;
                 padding-bottom: 15px;
                 padding-top: 10px;
-                width: 80%;
+                width: 85%;
                 text-align: left;
-                border-radius: 10px;
+                border-radius: 5px;
+                border: 1px solid lightgrey;
             }
             
             .contest-info h3 {
-                font-family: 'Spectral SC';
+                font-family: 'Lato';
                 width: 80%;
                 padding: 10px;
                 margin-left: 20px;
@@ -287,47 +325,35 @@
             }
             
             .contest-link {
+                font-family: 'Montserrat';
                 text-decoration: none;
                 margin-left: 30px;
-                color: #11bbff;
+                color: #1865F2;
             }
             
             .result-heading {
-                font-family: 'Spectral SC', serif;
-                background-color: #11bbff;
-                background-color: #474B4F;
-                padding: 10px 0px;
-                font-weight: bold;
-                width: 80%;
-                margin: auto;
                 margin-top: 40px;
-                border-radius: 10px;
+                padding: 10px 0px;
             }
             
             .results {
                 background-color: white;
                 color: black;
-                width: 80%;
+                width: 85%;
                 margin: auto;
                 margin-top: 15px;
                 margin-bottom: 30px;
-                border-radius: 10px;
+                border-radius: 5px;
                 font-family: "Montserrat", serif;
                 padding-bottom: 15px;
-            }
-            
-            .results-message {
-                font-family: "Montserrat", serif;
-                text-align: left;
-                padding: 15px;
-                line-height: 2em;
+                border: 1px solid lightgrey;
             }
             
             .results h3 {
-                font-family: 'Spectral SC', serif;
+                font-family: 'Lato', serif;
                 margin: auto;
                 text-align: center;
-                margin-top: 10px;
+                margin-top: 15px;
             }
             
             .winner-box {
@@ -376,7 +402,7 @@
             
             .explanation {
                 clear: both;
-                margin-top: 25%;
+                margin-top: 20%;
             }
             
             .hidden {
@@ -387,13 +413,13 @@
                 background-color: white;
                 margin: auto;
                 margin-bottom: 15px;
-                width: 80%;
-                border-radius: 10px;
+                width: 85%;
+                border-radius: 5px;
+                border: 1px solid lightgrey;
             }
             
             .faq-box {
                 margin: auto;
-                width: 90%;
                 margin-top: 10px;
                 margin-bottom: 10px;
                 padding-top: 10px;
@@ -402,7 +428,7 @@
             }
             
             .faq-box h3 {
-                font-family: 'Spectral SC';
+                font-family: 'Lato';
                 text-align: left;
                 padding: 0px 10px;
             }
@@ -428,7 +454,7 @@
             }
             
             .members-board {
-                width: 80%;
+                width: 85%;
                 margin: auto;
             }
             
@@ -439,15 +465,15 @@
                 height: 250px;
                 background-color: white;
                 color: black;
-                font-family: 'Spectral SC';
+                font-family: 'Lato';
                 font-size: 24px;
                 padding: 10px;
-                border-radius: 15px;
-                border: 1px solid white;
+                border-radius: 5px;
+                border: 1px solid lightgrey;
             }
             
             .member-box:hover {
-                border: 1px solid rgb(176, 176, 176);
+                border: 1px solid #21242C;
                 cursor: pointer;
             }
             
@@ -461,33 +487,34 @@
     <body id="body">
         <!-- Navigation bar -->
         <nav>
-            <!--<a href="#" class="nav-toggle-btn"></a>-->
-            <div class="nav-toggle-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
             <ul>
-                <li class="nav-option"><a onClick="displayContent('home-content')" href="#" id="home">Home</a></li>
-                <li class="nav-option"><a onClick="displayContent('contests-content')" href="#" id="contests">Contests</a></li>
-                <li class="nav-option"><a onClick="displayContent('members-content')" href="#" id="members">Members</a></li>
-                <li class="nav-option"><a onClick="displayContent('faq-content')" href="#" id="faq">FAQ</a></li>
+                <li class="nav-option nav-selected" id="home"><a onClick="displayContent('home-content')" href="#">Home</a></li>
+                <li class="nav-option" id="contests"><a onClick="displayContent('contests-content')" href="#">Contests</a></li>
+                <li class="nav-option" id="members"><a onClick="displayContent('members-content')" href="#">Members</a></li>
+                <li class="nav-option" id="faq"><a onClick="displayContent('faq-content')" href="#">FAQ</a></li>
             </ul>
         </nav>
         
-        <!-- Home Page -->
-        <div id="home-content" class="content">
-            <h1 class="heading">KACP Challenge Council</h1>
-            <div class="info">
-                <p style="padding: 10px 10px">Welcome to the KACP Challenge council page! Here you can find information about the council, view recent updates and announcements, and view contest information and results.</p>
+        <!-- Launch screen -->
+        <div id="launch">
+            <div id="launch-heading">
+                <svg width="200px" height="200px" viewBox="0 0 70 70"><path fill="#14bf96" d="M2.31,5.8A3.56,3.56,0,0,0,.66,8.6V19.4a3.56,3.56,0,0,0,1.65,2.8L12,27.62a3.75,3.75,0,0,0,3.3,0L25,22.2a3.56,3.56,0,0,0,1.65-2.8V8.6A3.56,3.56,0,0,0,25,5.8L15.31.38a3.75,3.75,0,0,0-3.3,0Z"></path><path fill="#ffffff" d="M23.61,11.32c-5.38,0-9.4,4.46-9.4,9.93v.23H13.13v-.23c0-5.47-4-9.91-9.42-9.93,0,.34,0,.69,0,1a9.91,9.91,0,0,0,6.4,9.32,10.47,10.47,0,0,0,3.59.64,10.64,10.64,0,0,0,3.62-.64,9.92,9.92,0,0,0,6.39-9.32C23.66,12,23.64,11.66,23.61,11.32Z"></path><circle fill="#ffffff" cx="13.66" cy="8.74" r="3"></circle></svg>
+                <h1>KACP Challenge Council</h1>
             </div>
             
-            <!-- News -->
-            <div id = "news" class="news">
-                <div class="news-heading">
-                    <h2>News & Updates</h2>
+            <div id="launch-container">
+                <div id="info">
+                    <p>Welcome to the KACP Challenge Council homepage! Here, you can view current and past contests, contest results, and other information about the monthly contests.</p>
                 </div>
+                <a onclick="displayContent('home-content'); startup();">Explore</a>
+            </div>
+        </div>
+        
+        <!-- Home Page -->
+        <div id="home-content" class="content">
+            <!-- News -->
+            <h1 class="heading">News & Updates</h1>
+            <div id = "news" class="news">
                 <!-- 
                 Posts should follow this format.
                 <div class="news-post">
@@ -704,7 +731,7 @@
             <div class="faq-container">
                 <div class="faq-box">
                     <h3>What is the KACP Challenge Council?</h3>
-                    <p>The KACP Challenge Council is a group of users selected by KA staff to create monthly CS contests for the community. You can find more information about the council here: <a href="https://khanacademy.zendesk.com/hc/en-us/articles/115003790912" target="_blank">https://khanacademy.zendesk.com/hc/en-us/articles/115003790912</a></p>
+                    <p>The KACP Challenge Council is a group of users selected by KA staff to create bi-monthly CS contests for the community. You can find more information about the council here: <a href="https://khanacademy.zendesk.com/hc/en-us/articles/115003790912" target="_blank">https://khanacademy.zendesk.com/hc/en-us/articles/115003790912</a></p>
                 </div>
                 
                 <div class="faq-box">
@@ -719,7 +746,7 @@
                 
                 <div class="faq-box">
                     <h3>When will the contests be released?</h3>
-                    <p>Contests will be released the first week of every month, and will end during the last week of each month.</p>
+                    <p>Contests will be released the first week of every other month, and will accept submissions for approximately 7 weeks.</p>
                 </div>
                 
                 <div class="faq-box">
@@ -771,27 +798,6 @@
         
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <!-- Nav script -->
-        <script>
-            (function() {
-                var bodyEl = $('body'),
-                navToggleBtn = bodyEl.find('.nav-toggle-btn');
-                
-                navToggleBtn.on('click', function(e) {
-                    bodyEl.toggleClass('active-nav');
-                    e.preventDefault();
-                    
-                });
-                
-                navOption = bodyEl.find('.nav-option');
-                
-                navOption.on('click', function(e) {
-                    bodyEl.toggleClass('active-nav');
-                    e.preventDefault();
-                });
-                
-            })();
-        </script>
         
         <!-- Page script -->
         <script>
@@ -806,7 +812,7 @@
                 }
                 
                 //Get page selected
-                var activePage = document.getElementById(currentPage)
+                var activePage = document.getElementById(currentPage);
                 
                 //Show current page
                 activePage.style.display = "block";
@@ -814,21 +820,34 @@
                 //Go back to top of page when a new page is displayed
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
                 
-                if (currentPage === "home-content") {
-                    document.getElementById("body").style.height = "1500px";
+                // Set selected page
+                var tabs = document.getElementsByClassName("nav-option");
+                
+                if (currentPage === "home-content" || 
+                currentPage === "contests-content" ||
+                currentPage === "members-content" ||
+                currentPage === "faq-content") {
+                    for (var i = 0; i < tabs.length; i++)
+                    {
+                        if (tabs[i].id === currentPage.split("-")[0]) {
+                            tabs[i].classList.add("nav-selected");
+                        } else {
+                            tabs[i].classList.remove("nav-selected");
+                        }
+                    }
                 }
-                else if (currentPage === "contests-content") {
-                    document.getElementById("body").style.height = "1500px";
-                }
-                else if (currentPage === "contest1") {
-                    document.getElementById("body").style.height = "1500px";
-                }
-                else if (currentPage === "contest2") {
-                    document.getElementById("body").style.height = "1500px";
-                }
-                else if (currentPage === "faq-content") {
-                    document.getElementById("body").style.height = "1500px";
-                }
+            }
+            
+            function startup() {
+                var nav = document.querySelector("nav");
+                nav.style.display = "block";
+                
+                var body = document.querySelector("body");
+                body.style.overflow = "scroll";
+                
+                var launch = document.getElementById("launch");
+                launch.style.opacity = 0;
+                setTimeout( function() { launch.style.display = "none"; }, 2000);
             }
         </script>
         
@@ -921,14 +940,14 @@
         */
             var contests = [
                 {
-                    title: "Favorite Author",
-                    link: "https://www.khanacademy.org/computer-programming/contest-favorite-author/5445162326523904",
+                    title: "Arcade Game",
+                    link: "https://www.khanacademy.org/computer-programming/contest-arcade-game/6099185963122688",
                     imageFile: "latest.png",
                     isCurrent: true,
                     contestIsVisible: true,
                     resultsAreVisible: false,
-                    description: "<p>November is National Novel Writing month, and we want to hear about your favorite authors, books, and series!</p><p>This month, create a webpage highlighting your favorite author(s). Make sure to include why they are your favorite, which books you like the best, and additional background info about the author and their work. What inspired them and how does this apply to others or your own life? Why should others read their books?</p><p>Deadline is November 27th, 2019. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. Projects should be submitted as a spin-off of this project. The top winners in each skill bracket will receive a Golden Winston.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!</p>",
-                    deadline: "November 27, 2019",
+                    description: "<p>As the new year begins, it's time to revisit the classics---Arcade Games! For this contest, create a program that resembles a traditional arcade or retro game. Your game can be a detailed replica, or you can create your own version of a traditional arcade game. Your program should include comments explaining how to play your game, a brief history of the game, and descriptions of any changes you made to the original.</p><p>If you're a beginner, you're also welcome to make a graphic of the game, or a program explaining the history of the industry or a specific game. You may also want to pick one of the earliest games, as those are typically less complicated.</p><p>Not sure where to start? Check out our tutorials on <a href=\"https://www.khanacademy.org/computing/computer-programming/programming-games-visualizations\" target=\"_blank\">Games & Visualizations</a>. Not sure which game to pick? Here's <a href=\"https://en.wikipedia.org/wiki/Arcade_game#List_of_highest-grossing_games\" target=\"_blank\">a list</a> of the most popular arcade games.</p><p>Deadline is February 21st, 2020. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. Projects should be submitted as a spin-off of this project. The top winners in each skill bracket will receive a Golden Winston.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!",
+                    deadline: "February 21, 2020",
                     results: {
                         advanced: [
                             {
@@ -997,6 +1016,126 @@
                                 authorName: "",
                                 authorKaid: "",
                                 explanation: ""
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Computer Science for Good",
+                    link: "https://www.khanacademy.org/computer-programming/contest-computer-science-for-good/6708882188500992",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>It's December again, which means many schools around the world will be teaching Hour of Code to give students an introduction to the world of computer science. But why?</p><p>Computers are becoming a big part of our lives these days, from normal home usage, to medicine, to transportation, to learning new things about our world, computers and robots are starting to do more and more things for society. By taking over tasks that can be dangerous for humans to do, and other more monotonous jobs, humans can have more time to learn, discover, and invent even better technology.</p><p>For this month's contest, make a program that shows one or more ways computer science can help us in becoming more technologically advanced and in solving world problems. You can pick either an existing technological invention that is doing good in the world, or you can propose your own ideas for future technology!</p><p>For this contest, we'll also be accepting webpage entries. If you'd like to submit a webpage entry, please save your code as a spin-off of the <a href=\"https://www.khanacademy.org/computer-programming/contest-computer-science-for-good-webpage-submissions/6362796654559232\" target=\"_blank\">webpage submission program</a>. Otherwise, you can submit a ProcessingJS entry as a spin-off of this program, as usual.</p><p>Deadline is December 27, 2019. We will judge in the week after that, and award based on creativity, complexity, and clean commented code. The top winners in each skill bracket will receive a Golden Winston. Attribute any parts of your code you didn't write, and most importantly, have fun!</p>",
+                    deadline: "December 27, 2019",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/our-dependency-on-technology/6494821447385088",
+                                title: "Our Dependency on Technology",
+                                authorName: "William Wang",
+                                authorKaid: "kaid_1060696438578062597752457",
+                                explanation: "We loved the beautiful and simplistic design of this webpage! The site is very easy to navigate, contains lots of great information (both text and visuals!), all while looking very clean and elegant."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/inside-a-computer-slideshowtutorial-contest/6128289183662080",
+                                title: "Inside A Computer (SLIDESHOW/TUTORIAL)",
+                                authorName: "The Anonymous (previously wkr1128)",
+                                authorKaid: "kaid_229533926594864627945262",
+                                explanation: "This program has a very neat gradient background and fun page-change animations! The program also has *tons* of great information on the various components of computer systems."
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/fields-of-technology/5975303289585664",
+                                title: "Fields of Technology",
+                                authorName: "Preetham Sivalingam",
+                                authorKaid: "kaid_358468182489261409383297",
+                                explanation: "This program has very smooth page changes and is easy to navigate. We also liked how the program contains several real-world examples!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/computers-contest-entry/5907614407819264",
+                                title: "Computers (CONTEST ENTRY)",
+                                authorName: "Rheeno",
+                                authorKaid: "kaid_466243383390774530279993",
+                                explanation: "This program has a nice intro to the underlyings of computers. The proposed technological inventions were also very creative!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/wip/6543544651055104",
+                                title: "Computers: Changing the world bit by bit",
+                                authorName: "amberallard2006",
+                                authorKaid: "kaid_1112686120861942434881694",
+                                explanation: "This program is very informative, with a nice use of animations and mouse interaction! Very well done!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/spin-off-of-contest-computer-science-for-good/5447516992536576",
+                                title: "Spin-off of \"Contest: Computer Science for Good\"",
+                                authorName: "John Smith",
+                                authorKaid: "kaid_414091654426022932799988",
+                                explanation: "This program has a creative concept with a nice auto-playing animation! Great job!"
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Favorite Author",
+                    link: "https://www.khanacademy.org/computer-programming/contest-favorite-author/5445162326523904",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>November is National Novel Writing month, and we want to hear about your favorite authors, books, and series!</p><p>This month, create a webpage highlighting your favorite author(s). Make sure to include why they are your favorite, which books you like the best, and additional background info about the author and their work. What inspired them and how does this apply to others or your own life? Why should others read their books?</p><p>Deadline is November 27th, 2019. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. Projects should be submitted as a spin-off of this project. The top winners in each skill bracket will receive a Golden Winston.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!</p>",
+                    deadline: "November 27, 2019",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/favorite-authors/5858174651301888",
+                                title: "Favorite Authors",
+                                authorName: "Reader Writer Penguin",
+                                authorKaid: "kaid_660115468292459786165770",
+                                explanation: "This webpage has a very clean and modern look, and was a lot of fun to explore! The creator did an excellent job of conveying lots of information in the webpage, without overcrowding the pages!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/author/5045833780133888",
+                                title: "Author",
+                                authorName: "Math Hopper",
+                                authorKaid: "kaid_37985026257344370016806",
+                                explanation: "The simple two-tone design works really well here, and the ability to change the color scheme was a neat feature! This site was a lot of fun to explore, and the navigation links were very creative!"
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/my-outstanding-authors/6069035594121216",
+                                title: "My Outstanding Authors",
+                                authorName: "Allison (tAG54)",
+                                authorKaid: "kaid_1129219992578921989012678",
+                                explanation: "This webpage has a really nice and simplistic design and navigation. The slideshow format works really well here, and the webpage almost feels like a book itself!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/c-s-lewis/4863427759013888",
+                                title: "C. S. Lewis",
+                                authorName: "ThunderCode",
+                                authorKaid: "kaid_1154235972805463748831378",
+                                explanation: "The program has a fun design and nice colors! There's also lot's of great information in this webpage, and the trivia quiz at the end was a nice addition :)"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/james-patterson-contest-entry/6113735702708224",
+                                title: "James Patterson [CONTEST ENTRY]",
+                                authorName: "Anonymous",
+                                authorKaid: "kaid_1025315229639221216978690",
+                                explanation: "This webpage has a nice grey-scale design and neat border styling! The scrolling text banner was also a nice touch!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/favourite-authors/6213159352238080",
+                                title: "Favourite Authors",
+                                authorName: "Frost",
+                                authorKaid: "kaid_770553674524080886285792",
+                                explanation: "This webpage has a nice, simplistic layout that is easy to follow. The layout and use of images, text, and headings work well to convey the information presented. Great job!"
                             }
                         ]
                     }
@@ -2641,7 +2780,7 @@
                 if (contests[i].resultsAreVisible == true) {
                     
                     // Holds content that will be displayed
-                    var content = "<h2 class=\"result-heading\">Results</h2><div class=\"results\"><p class=\"results-message\"></p><div class=\"winner-box\">";
+                    var content = "<h2 class=\"result-heading heading\">Results</h2><div class=\"results\"><div class=\"winner-box\">";
                     
                     // Loop through three skill categories
                     for (var a = 0; a < 3; a++) {
@@ -2739,14 +2878,29 @@
             function loadAnnouncements(data) {
                 var newsContainer = document.getElementById("news");
                 
-                newsContainer.innerHTML = "<div class=\"news-heading\"><h2>News & Updates</h2></div>";
+                newsContainer.innerHTML = "";
                 
-                for (var i = data.length - 1; i >= data.length - 5; i--) {
-                    if (data[i].authorKaid == "kaid_1173497530379971182404232") {
+                var postCount = 0;
+                for (var i = data.length - 1; postCount < 5; i--) {
+                    if (data[i].authorKaid === "kaid_1173497530379971182404232") {
                         var post = "<div class=\"news-post " + isNew(data[i].date) + "\"><h3 class=\"news-title\">" + data[i].content.split("*")[1] + "</h3><h5 class=\"news-date\">" + newDate(data[i].date) + "</h5><p class=\"news-content\">";
                         
                         // Include italics formatting
                         var content = data[i].content.split("*")[2];
+                        
+                        var copy = "";
+                        // Add line breaks
+                        var s = content.split("\n");
+                        
+                        for (var j = 0; j < s.length; j++) {
+                            if (j > 1) { 
+                                copy += "<br>";
+                            }
+                            copy += s[j];
+                        }
+                        
+                        content = copy;
+                        
                         for (var a = 0; a < content.split("_").length; a++) {
                             if (a % 2 === 0) {
                                 post += content.split("_")[a];
@@ -2761,7 +2915,7 @@
                         post += "</p></div>";
                         
                         newsContainer.innerHTML += post;
-                
+                        postCount++;
                     }
                 }
             }
@@ -2816,7 +2970,7 @@
                     name: "Matthias",
                     kaid: "kaid_757721856896775939251306",
                     avatar: "/avatars/robot_male_3.png",
-                    isCurrentMember: true
+                    isCurrentMember: false
                 },
                 {
                     name: "Nicholas",
@@ -2837,15 +2991,17 @@
                 
                 container.innerHTML = "";
                 
+                var count = 0;
                 for (var i = 0; i < members.length; i++) {
                     
                     if (members[i].isCurrentMember) {
                         var str = "<a href=\"https://khanacademy.org/profile/" + members[i].kaid + "\"target=\"_blank\"><div class=\"member-box ";
-                        if (i % 2 == 0) {
+                        if (count % 2 == 0) {
                             str += "col1";
                         } else {
                             str += "col2";
                         }
+                        count++;
                     
                         str += "\"><div class=\"member-info\" style=\"margin-top: 18%\"><img class=\"member-avatar\"src=\"https://www.kasandbox.org/programming-images";
                     
