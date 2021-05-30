@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>KACP Challenge Council</title>
+        <title>Welcome to Contests!</title>
         <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
         <style>
             * {
@@ -449,6 +449,21 @@
                 margin-top: 10px;
             }
             
+            .info-box {
+                box-sizing: border-box;
+                width: 85%;
+                margin: auto;
+                margin-bottom: 20px;
+                padding: 15px;
+                font-family: 'Montserrat';
+                font-size: 16px;
+                text-align: left;
+                background-color: white;
+                color: black;
+                border-radius: 5px;
+                border: 1px solid lightgrey;
+            }
+            
             .members-content {
                 width: 80%;
             }
@@ -504,7 +519,7 @@
             
             <div id="launch-container">
                 <div id="info">
-                    <p>Welcome to the KACP Challenge Council homepage! Here, you can view current and past contests, contest results, and other information about the monthly contests.</p>
+                    <p>Welcome to the Contests Homepage! Here, you can view current and past contests, contest results, and other information about the monthly contests.</p>
                 </div>
                 <a onclick="displayContent('home-content'); startup();">Explore</a>
             </div>
@@ -712,6 +727,15 @@
         <div id="members-content" class="content">
             <h1 class="heading">Council Members</h1>
             
+            <div class="info-box">
+                <p>The KACP Challenge Council is a group of users selected by KA staff to create bi-monthly CS contests for the community. You can find more information about the council here: <a href="https://khanacademy.zendesk.com/hc/en-us/articles/115003790912" target="_blank">https://khanacademy.zendesk.com/hc/en-us/articles/115003790912</a></p>
+                <br>
+                <p><strong>Can I be a member of the council?</strong></p>
+                <p>Information on applying for the Challenge Council can be found <a href="https://khanacademy.zendesk.com/hc/en-us/articles/115003791172-How-do-I-apply-to-the-KACP-Challenge-Council-">here</a>.</p>
+                <br>
+                <p>The current members of the Challenge Council are shown below.</p>
+            </div>
+                
             <div class="members-board" id="members-container">
             </div>
         </div>
@@ -730,21 +754,6 @@
             
             <div class="faq-container">
                 <div class="faq-box">
-                    <h3>What is the KACP Challenge Council?</h3>
-                    <p>The KACP Challenge Council is a group of users selected by KA staff to create bi-monthly CS contests for the community. You can find more information about the council here: <a href="https://khanacademy.zendesk.com/hc/en-us/articles/115003790912" target="_blank">https://khanacademy.zendesk.com/hc/en-us/articles/115003790912</a></p>
-                </div>
-                
-                <div class="faq-box">
-                    <h3>Can I be a member of the council?</h3>
-                    <p>Information on applying for the Challenge Council can be found <a href="https://khanacademy.zendesk.com/hc/en-us/articles/115003791172-How-do-I-apply-to-the-KACP-Challenge-Council-">here</a>.</p>
-                </div>
-            
-                <div class="faq-box">
-                    <h3>How can I receive updates on the contests?</h3>
-                    <p>Updates on the contest will be posted on the home page of this webpage. You can also subscribe to the update thread below to receive notifications when new update posts are added.</p>
-                </div>
-                
-                <div class="faq-box">
                     <h3>When will the contests be released?</h3>
                     <p>Contests will be released the first week of every other month, and will accept submissions for approximately 7 weeks.</p>
                 </div>
@@ -760,8 +769,18 @@
                 </div>
                 
                 <div class="faq-box">
+                    <h3>Can I use my alternate account to submit my entry?</h3>
+                    <p>Using alternate accounts is discouraged as it makes verifying originality very difficult. You can post your finished project to your alternate account but for the contest entry, use the account you do most of your work in.</p>
+                </div>
+                
+                <div class="faq-box">
                     <h3>Can I submit a program I have already made?</h3>
                     <p>No. All entries need to be made after the contest is released. Using a program you have already created would give you an unfair advantage over the rest of the competition, and we want the contests to be fair!</p>
+                </div>
+                
+                <div class="faq-box">
+                    <h3>Can I use code I have previously written?</h3>
+                    <p>You may use code blocks that you previously wrote in your entry as long as you clearly indicate with comments what code was previously written and where it came from. Please note that we will only judge code written after the start of the contest, so the previously written code should not be a significant part of your project.</p>
                 </div>
             
                 <div class="faq-box">
@@ -792,6 +811,10 @@
                 <div class="faq-box">
                     <h3>What will the winners receive?</h3>
                     <p>For each contest, all winners will receive a Golden Winston badge specific to the contest.</p>
+                </div>
+                <div class="faq-box">
+                    <h3>How can I receive updates on the contests?</h3>
+                    <p>Updates on the contest will be posted on the home page of this webpage. You can also subscribe to the update thread below to receive notifications when new update posts are added.</p>
                 </div>
             </div>
         </div>
@@ -940,14 +963,14 @@
         */
             var contests = [
                 {
-                    title: "Arcade Game",
-                    link: "https://www.khanacademy.org/computer-programming/contest-arcade-game/6099185963122688",
+                    title: "Illustrate a Math Concept",
+                    link: "https://www.khanacademy.org/computer-programming/contest-illustrate-a-math-concept/4820784361979904",
                     imageFile: "latest.png",
                     isCurrent: true,
                     contestIsVisible: true,
                     resultsAreVisible: false,
-                    description: "<p>As the new year begins, it's time to revisit the classics---Arcade Games! For this contest, create a program that resembles a traditional arcade or retro game. Your game can be a detailed replica, or you can create your own version of a traditional arcade game. Your program should include comments explaining how to play your game, a brief history of the game, and descriptions of any changes you made to the original.</p><p>If you're a beginner, you're also welcome to make a graphic of the game, or a program explaining the history of the industry or a specific game. You may also want to pick one of the earliest games, as those are typically less complicated.</p><p>Not sure where to start? Check out our tutorials on <a href=\"https://www.khanacademy.org/computing/computer-programming/programming-games-visualizations\" target=\"_blank\">Games & Visualizations</a>. Not sure which game to pick? Here's <a href=\"https://en.wikipedia.org/wiki/Arcade_game#List_of_highest-grossing_games\" target=\"_blank\">a list</a> of the most popular arcade games.</p><p>Deadline is February 21st, 2020. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. Projects should be submitted as a spin-off of this project. The top winners in each skill bracket will receive a Golden Winston.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!",
-                    deadline: "February 21, 2020",
+                    description: "<p>The field of math involves many abstract and sometimes complex concepts. As many of you have probably learned, visualizing and understanding these concepts can sometimes be quite a challenge!</p><p>For this contest, create a program that in some way illustrates a mathematical concept. For example, is it possible to illustrate how some infinities are bigger than other infinities? Or perhaps the solution to a mathematical problem/puzzle (such as the N-Queens Problem!) can \"illustrate\" a math concept? We encourage you to learn about advanced topics and think outside the box about how you can illustrate them! The end goal is to help someone visualize and conceptualize your chosen topic.</p><p>The deadline for this contest is June 25, 2021. We will judge the following week and award winners based on creativity, complexity, and clean, commented code. The selected winners will receive a Golden Winston badge.</p><p>All entries should be submitted as spin-offs of this program.</p><p>Attribute any parts of your entry you didn’t write, and most importantly, have fun!</p><p>Additional questions? Visit the <a href = \"https://www.khanacademy.org/computer-programming/kacp-challenge-council/5745407636209664\" target = \"_blank\">FAQ page</a> or post a new question below this project if your question is not yet listed.</p>",
+                    deadline: "June 25, 2021",
                     results: {
                         advanced: [
                             {
@@ -1016,6 +1039,717 @@
                                 authorName: "",
                                 authorKaid: "",
                                 explanation: ""
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Oceans",
+                    link: "https://www.khanacademy.org/computer-programming/contest-oceans/6161105327439872",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>The ocean is one of the most obscure places on Earth – it is thought that more than 80% of it is unexplored. In fact, we are able to map more of the surface of the moon and Mars than we can the bottom of the ocean! For this contest, create a program that creatively portrays the ocean. What creatures that we have not yet discovered might it contain? What are some innovative ways to tackle ocean pollution or sustainability?</p><p>We will be accepting both PJS and HTML/CSS projects for this contest! If you would like to submit an HTML entry, visit the <a href = \"https://www.khanacademy.org/computer-programming/contest-oceans-webpage-submissions/4558960035577856\" target = \"_blank\">HTML Entry Page</a>.</p><p>The deadline for this contest is April 25, 2021. We will judge the following week and award winners based on creativity, complexity, and clean, commented code. The selected winners will receive a Golden Winston badge.</p><p>JS entries should be submitted as spin-offs of this program, and HTML entries should be submitted as spin-offs of the HTML entry page.</p><p>Attribute any parts of your entry you didn’t write, and most importantly, have fun!</p><p>Additional questions? Visit the <a href = \"https://www.khanacademy.org/computer-programming/kacp-challenge-council/5745407636209664\" target = \"_blank\">FAQ page</a> or post a new question below this project if your question is not yet listed.</p>",
+                    deadline: "April 25, 2021",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/an-assemblage-of-ocean-themed-programs/5260938073554944",
+                                title: "An Assemblage of Ocean Themed Programs",
+                                authorName: "Synapse",
+                                authorKaid: "kaid_1011121479142039633146274",
+                                explanation: "This is an excellent two-game-combo with stunning graphics and smooth gameplay! The creature movements and animations are all very well done, and the code is excellently structured and organized!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/pollute-the-ocean-simulator-contest-entry/6288021279162368",
+                                title: "Pollute the Ocean Simulator",
+                                authorName: "Squishy",
+                                authorKaid: "kaid_79492645558798574591143",
+                                explanation: "This is a very creative program that incorporates the idea of ocean pollution into a game showing its harmful effects. The interactive world map is very interesting and the rest of the program and gameplay are very well done! The simulation of policy expenditure vs. uncertain results was intriguing!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/tiny-reefs-game/6306939637022720",
+                                title: "tiny reefs",
+                                authorName: "SKY",
+                                authorKaid: "kaid_59991837997505661983736",
+                                explanation: "This is a very creative and fun ocean-themed puzzle game! We liked the simple graphics and almost retro-feel that this program has. This game was lots of fun to play and proved to be quite challenging!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/ocean/6481216860536832",
+                                title: "Ocean",
+                                authorName: "LeaferStudios 😎",
+                                authorKaid: "kaid_553656479258879622339276",
+                                explanation: "This is a very informative and well researched project! The navigation is very nice and the overall design looks very professional. We really liked all of the interactive components!"
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/spin-off-of-contest-oceans/5643070070013952",
+                                title: "Spin-off of \"Contest: Oceans\"",
+                                authorName: "Weird Alien",
+                                authorKaid: "kaid_199887879082679355699492",
+                                explanation: "This is an incredibly detailed graphic showing lots of marine life! We liked the fun colors and excellent artistic ability that this program showcases! The code is also well organized!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/ocean-census-full-release/4847582965612544",
+                                title: "Ocean Census",
+                                authorName: "RazzRack",
+                                authorKaid: "kaid_157697076862987796014963",
+                                explanation: "This program does an excellent job of adding interesting facts to an ocean-themed game! We loved the creative and interactive storyline!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/oceanopedia/6249571869999104",
+                                title: "Oceanopedia",
+                                authorName: "Voldemort",
+                                authorKaid: "kaid_109088529962766375028969",
+                                explanation: "This is one of the most informative programs that we saw for this contest! The webpage design looks very clean and works well for the ocean theme. The code is also well organized and structured!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/sinking-ship/4674526815141888",
+                                title: "Sinking Ship",
+                                authorName: "PagaSaur",
+                                authorKaid: "kaid_491714214227624749415236",
+                                explanation: "This program is an excellent graphic showcasing tremendous artistic ability! The code is well organized and overall very well put together!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/the-world-acording-to-a-fish/4769827672506368",
+                                title: "The World Acording To a Fish",
+                                authorName: "ℭaptain 𝔚inston™",
+                                authorKaid: "kaid_291975009102844517362394",
+                                explanation: "This is a fun interactive graphic that does a good job of imagining the life of a fish! The code is well organized and commented too!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/ocean-life-animation/6716095104237568",
+                                title: "Ocean Life",
+                                authorName: "SharkBorn",
+                                authorKaid: "kaid_565500720467442267352051",
+                                explanation: "This is a nice animation of ocean life with multiple moving components! Great job using functions and keeping the code organized!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/underwater-world-entry/6541438945804288",
+                                title: "Underwater World",
+                                authorName: "Star Engineering",
+                                authorKaid: "kaid_6277597390530919656569971",
+                                explanation: "This is a very nice infographic-style program. The info buttons are well done and show lots of good information about marine life. We liked the side-scrolling format to reveal more creatures of the ocean!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/the-pelagic-zone/5628545198931968",
+                                title: "The Pelagic Zone",
+                                authorName: "TDJ ₮he ⋐ool ↁude",
+                                authorKaid: "kaid_682972421482671044758972",
+                                explanation: "This program has a nice use of vertical scrolling to show various depths of the ocean! The program contains good information and the drawings of the marine animals all look great!"
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Archaeological Dig",
+                    link: "https://www.khanacademy.org/computer-programming/contest-archaeological-dig/4688099819339776",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>Archaeology is the study of historical artifacts in order to understand how human behavior has changed over time. By excavating artifacts and fossils, we can determine what animals were alive, how people lived, and what the land looked like during a particular time period.</p><p>For this contest, your goal is to use your imagination to portray an archaeological discovery. Did they uncover an ancient city? A fossil? A mysterious object? Using your creativity and coding skills, create a graphic, animation, or game that clearly portrays the concept you are representing.</p><p>The deadline for this contest is February 21st, 2021. We will judge in the week after that, awarding winners based on creativity, efficiency, and clean, commented code.</p><p>All entries should be submitted as a spin-off of this project. Attribute any parts of your entry that you didn't write. And most importantly, have fun!</p>",
+                    deadline: "February 21, 2021",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/dig-zone-contest-entry/5124080078897152",
+                                title: "Dig Zone",
+                                authorName: "JP",
+                                authorKaid: "kaid_226616569303588979232618",
+                                explanation: "This project was a fun adaptation of the contest theme. The gameplay was great and included lots of fun details. The code is well organized and structured."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/sherds/6316598305964032",
+                                title: "Sherds",
+                                authorName: "Christelle Winter",
+                                authorKaid: "kaid_384553511609450674446247",
+                                explanation: "This is a terrific program that simulates a real dig! The ability to brush and wash multiple items concurrently shows good solid design. Overall this project really brought the theme to life!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/discovering-the-past-entry/4666520633819136",
+                                title: "Discovering the past",
+                                authorName: "NitOwl007",
+                                authorKaid: "kaid_607413902639112014082643",
+                                explanation: "This program contains lots of interesting information and excellent graphics! The code is also well organized and commented."
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/finding-the-remains-of-a-caveman/4985039563997184",
+                                title: "Finding the remains of a caveman",
+                                authorName: "Weird Alien",
+                                authorKaid: "kaid_199887879082679355699492",
+                                explanation: "This program features a stunning graphic showing excellent artistry! This is a great interpretation of the theme!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/wip/5381707509743616",
+                                title: "All you need to know about Archeolgy",
+                                authorName: "PagaSaur",
+                                authorKaid: "kaid_491714214227624749415236",
+                                explanation: "This project has very nice graphics and well commented code! The inclusion of multiple pages/components is also neat."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/the-power-of-vr/6307494958153728",
+                                title: "The Power of VR",
+                                authorName: "𝓟𝓻𝓸𝓰𝓻𝓪𝓶𝓶𝓮𝓻𝓜𝓸𝓿",
+                                authorKaid: "kaid_89511362204264358138955",
+                                explanation: "This is a very creative interpretation of the theme and shows the author spent time researching their topic. We liked the VR premise they used as well!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/spin-off-of-contest-archaeological-dig/5544503768727552",
+                                title: "Spin-off of \"Contest: Archaeological Dig\"",
+                                authorName: "elizabeth",
+                                authorKaid: "kaid_879429862105799252962492",
+                                explanation: "The visual design and animation is very well done! The program features an excellent use of OOP and is well-commented."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/miner-animation/6144812115247104",
+                                title: "Miner (Animation)",
+                                authorName: "Vortex",
+                                authorKaid: "kaid_1191832568232610683566773",
+                                explanation: "This is a fun entry with nice animated parts as well! We liked the creative touch of adding the artifacts the poor miner is unlucky enough to miss!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/pyramids-animation-contest-entry/6218004108361728",
+                                title: "Pyramids Animation",
+                                authorName: "TDJ07",
+                                authorKaid: "kaid_682972421482671044758972",
+                                explanation: "This is a very nice and minimalistic drawing. The day/night feature was a neat addition!"
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Bird Seed Factory",
+                    link: "https://www.khanacademy.org/computer-programming/contest-bird-seed-factory/4894927375515648",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>Some students study programming just for the knowledge, and some want to make it a career. For this contest we are going to depart from the normal type of contest to go on an imaginary job interview!</p><p>Walking into a manufacturing company looking for software development work might include the interviewer asking you to sit down and use their computer/software to solve a programming problem. That is what this contest is simulating. An imaginary production equipment manufacturer that makes robotic arms and other production machinery needs a software developer to write the software that is the brains of their production equipment.</p><p>There are three skill levels as listed in the contest code. Pick one (or more) levels and fill in the missing code that will make the machinery do its task. The deadline for this contest is December 26th, 2020. We will judge in the week after that, awarding winners based on creativity, efficiency, and clean, commented code.</p><p>This is a new type of contest and we would welcome your comments and feedback in the Tips & Thanks section below. If there is enough interest, we could add another contest some time next year to perhaps give you a version 1 application, and let you add features or creative improvements to make it a version 2 application, or other such ideas. Feel free to let us know what you think of this contest type (good or bad).</p><p>All entries should be submitted as a spin-off of this project. Attribute any parts of your entry that you didn't write. Most importantly, have fun!</p>",
+                    deadline: "December 26, 2020",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/entry-contest-bird-seed-factory/6311904693403648",
+                                title: "Entry - \"Contest: Bird Seed Factory\"",
+                                authorName: "SKY",
+                                authorKaid: "kaid_59991837997505661983736",
+                                explanation: "This program has a nice use of constants and great readability. We also enjoyed how smoothly the program ran."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/bird-seed-factory-advanced-level/6594721995243520",
+                                title: "Bird Seed Factory (Advanced Level)",
+                                authorName: "steve.ko",
+                                authorKaid: "kaid_330947734974068144246677",
+                                explanation: "This program has a great use of pseudo-code and runs very efficiently. Great work!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/contest-bird-seed-factory-all-levels-attempted/5560174884110336",
+                                title: "Contest: Bird Seed Factory - All Levels Attempted",
+                                authorName: "Prisha B.",
+                                authorKaid: "kaid_861909786767545381407237",
+                                explanation: "This program has very clean, well-labeled code, and successfully completed all three levels. We also liked how the arm’s state was kept inside an object, which kept things neat and tidy!"
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/bird-seed-factory-pro/4644777102098432",
+                                title: "Bird Seed Factory Pro",
+                                authorName: "Krzysztof Ryniec",
+                                authorKaid: "kaid_986031622174942658033497",
+                                explanation: "This program has a nice use of array functions and sorting, as well as being very efficient and well-commented. Nicely done!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/spin-off-of-contest-bird-seed-factory/4889055359352832",
+                                title: "Spin-off of \"Contest: Bird Seed Factory\"",
+                                authorName: "totoro",
+                                authorKaid: "kaid_255968679935383204444592",
+                                explanation: "This program has an efficient solution and good use of comments. We enjoyed the readability and how well-documented it was."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/contest-bird-seed-factory-intermediate-beginner/5909180467068928",
+                                title: "Contest: Bird Seed Factory - Intermediate & Beginner",
+                                authorName: "Steven Scho",
+                                authorKaid: "kaid_584837848415738471870543",
+                                explanation: "This program performs the task well and is nicely commented. We really liked the bag counter feature and easy to follow code!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/bird-seed-factorybeginner/5242370939895808",
+                                title: "Bird Seed Factory(Beginner)",
+                                authorName: "Neon Byte",
+                                authorKaid: "kaid_600198987757497388218405",
+                                explanation: "This program is efficient and well-labled. We enjoyed the use of the ternary operator!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/hoppers-bird-seed-factory/6108652457377792",
+                                title: "Hopper's Bird Seed Factory",
+                                authorName: "Karsten",
+                                authorKaid: "kaid_164726218027180586662606",
+                                explanation: "This program has very clean code and good use of comments. The changing Hoppers by the hoppers was a very nice touch!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/bird-seed-factory-finished/4720957992681472",
+                                title: "Bird Seed Factory (finished)",
+                                authorName: "Akul NG",
+                                authorKaid: "kaid_491714214227624749415236",
+                                explanation: "This program had very well explained and easy to follow code. Well done!"
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Useful Application",
+                    link: "https://www.khanacademy.org/computer-programming/contest-useful-application/4847529752346624",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p> All around us, there are tools created by man. We are surrounded by so many applications that most of them completely escape our attention. Some applications are created for specific tasks, while others can help us with almost everything. Computers and technology are advancing at such a remarkable pace that we can now create computer programs to complete almost anything electronically.</p><p>For this contest, create a useful program that helps accomplish a common task. This includes applications in the range from something as simple as a planner or stopwatch to anything as advanced as a decryption tool or sprite tool, and beyond!</p><p> We will be accepting both HTML/CSS and PJS projects for this contest. If you would like to submit an HTML entry, visit the <a href = 'https://www.khanacademy.org/computer-programming/contest-useful-application/4559313606361088' target = '_blank'>HTML Entry Page</a>.</p><p>The deadline for this contest is October 24, 2020. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. There will be at least one winner per skill bracket for each language. The selected winners will receive a Golden Winston.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!</p>",
+                    deadline: "October 24, 2020",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/mindmap/5373612526354432",
+                                title: "MindMap",
+                                authorName: "Jam0708",
+                                authorKaid: "kaid_684064714307603949888221",
+                                explanation: "This program is very useful and creative, and has excellent features. We loved the user interface and extremely well-organized and commented code!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/vector-art-maker-10/5629933305675776",
+                                title: "Vector Art Maker 1.0",
+                                authorName: "SKY",
+                                authorKaid: "kaid_59991837997505661983736",
+                                explanation: "This vector art maker is easy to use and contains many useful features, as well as having well-organized and commented code. Well done!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/ka-search-contest-submission/5263884573032448",
+                                title: "KA Search",
+                                authorName: "Lone Ninja",
+                                authorKaid: "kaid_1186543978601773215048782",
+                                explanation: "We loved the originality and usefulness of this program! It also had a very nice user interface and advanced options."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/converter/6343343945236480",
+                                title: "Converter",
+                                authorName: "Daniel R",
+                                authorKaid: "kaid_796293068309285208237430",
+                                explanation: "This is a very practical and useful converter, with good user interaction! We liked the multiple conversion options and clean, organized code."
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/sketchpad/5006241551302656",
+                                title: "Sketchpad",
+                                authorName: "Prisha",
+                                authorKaid: "kaid_861909786767545381407237",
+                                explanation: "This program is a great drawing tool, with lots of features to customize your drawing. The code is well-commented and very organized!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/math-practice-the-ultimate-math-tool/6584697338150912",
+                                title: "Math Practice || The ultimate math tool",
+                                authorName: "LeaferStudios",
+                                authorKaid: "kaid_553656479258879622339276",
+                                explanation: "This program has a great user interface and well-organized code. We loved the different practice options and usability!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/mirror-paint-v2/6237689123913728",
+                                title: "Mirror Paint! v2",
+                                authorName: "totoro.is.my.neighbour",
+                                authorKaid: "kaid_255968679935383204444592",
+                                explanation: "This is a very creative and fun drawing program that can create some interesting designs!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/notes/5154286802780160",
+                                title: "Notes.",
+                                authorName: "CodeXRed ッ",
+                                authorKaid: "kaid_872610279239395011992876",
+                                explanation: "This program has lots of user-friendly options and settings, as well as a nice user interface and organized code. Great work!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/xy-graph-tool/4726006037561344",
+                                title: "XY Graph Tool",
+                                authorName: "CuriousCoder",
+                                authorKaid: "kaid_1032353717455773691615176",
+                                explanation: "This program features a useful graph that can be helpful in mapping out coordinates, as well as a good use of user interaction. Well done!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/flash-card-generator/6240863497961472",
+                                title: "FLASH-CARD GENERATOR",
+                                authorName: "ᴍᴀʀᴠᴇʟ456",
+                                authorKaid: "kaid_600977083891570199749456",
+                                explanation: "This program has a clean layout and practical uses. We really liked the ability to customize your questions/answers and change the styling!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/quote-randomizer-based-on-emotions/4859044704239616",
+                                title: "Quote Randomizer Based on Emotions!",
+                                authorName: "sheilachambers7",
+                                authorKaid: "kaid_119041832600519999890350",
+                                explanation: "This is a really nice, creative program with many positive well thought-out messages. The code is also clean and well-organized."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/exacto-clock-contest-entry/6202795011817472",
+                                title: "Exacto - Clock",
+                                authorName: "Mr. Winston",
+                                authorKaid: "kaid_291975009102844517362394",
+                                explanation: "This program is a very useful clock, with accurate times, dates, and holidays. Great job!"
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Sports",
+                    link: "https://www.khanacademy.org/computer-programming/contest-sports/5607389044228096",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>Humans have been creating and playing sports for centuries – we want you to help identify what it is that makes sports a fan favorite! Athletes enjoy participating in the sport of their choice, while many sports have fans and spectators that enjoy watching the competition.</p><p>Do you have a favorite sport? Do you prefer to participate or spectate? For this contest, develop a program that helps represent or explain why people have been engaged in sporting competitions for so many years. Is it the skills required, or strategy of the game? What is it about sports that makes them so much fun? These are some things to keep in mind while creating your program. Need some ideas? Check out this list of <a href=\"https://en.wikipedia.org/wiki/List_of_sports\" target=\"_blank\">popular sports</a>.</p><p>The deadline for this contest is August 21, 2020. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. Projects should be submitted as a spin-off of this project. The top winners in each skill bracket will receive a Golden Winston badge.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!</p><p>Additional questions? Visit the <a href=\"https://www.khanacademy.org/computer-programming/kacp-challenge-council/5745407636209664\" target=\"_blank\">FAQ page</a> or post a new question below this program if your question is not yet listed.</p>",
+                    deadline: "August 21, 2020",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/2-player-snooker/5977066735222784",
+                                title: "2 Player Snooker",
+                                authorName: "Lisanne",
+                                authorKaid: "kaid_309096734279650715562021",
+                                explanation: "This program is an excellent simulation of snooker, with an outstanding gameplay and use of physics. The program is all around very well done!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/hurdles-game/6473160716009472",
+                                title: "Hurdles",
+                                authorName: "SKY",
+                                authorKaid: "kaid_59991837997505661983736",
+                                explanation: "This program features a fun twist on the classic track-and-field race, clean graphics and smooth gameplay, all with well-commented and clean code!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/quidditch-3d-sim-demo/5982113229520896",
+                                title: "Quidditch 3D Sim DEMO",
+                                authorName: "AquA217",
+                                authorKaid: "kaid_794864070338193862176253",
+                                explanation: "This is a very cool re-creation of Quidditch, with the functionality to choose your team and position. The program is a great 3D simulation with a lot of complexity. We'd love to see a fully completed version!"
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/bocce-ball-legends/6178037976088576",
+                                title: "Bocce Ball Legends",
+                                authorName: "Jonathan Whyte",
+                                authorKaid: "kaid_1125274165739656387391701",
+                                explanation: "This program features several different versions of bocce games as well as an interactive tutorial and history of the sport. The code was clean and well organized!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/anomalous-athletics-for-contest-sports/6322422372712448",
+                                title: "Anomalous Athletics",
+                                authorName: "Prisha B.",
+                                authorKaid: "kaid_861909786767545381407237",
+                                explanation: "We loved this collection of detailed, sport-related graphics with extremely well-organized and commented code!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/spin-off-of-contest-sports/4749559795892224",
+                                title: "Spin-off of \"Contest: Sports\"",
+                                authorName: "DigiGirl",
+                                authorKaid: "kaid_724443197112032082115236",
+                                explanation: "This is a really nice informational and interactive program showing the different roles or positions in volleyball. Great job!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/history-of-the-olympics/4667094235693056",
+                                title: "History of the Olympics!",
+                                authorName: "polar",
+                                authorKaid: "kaid_561221874114796151590813",
+                                explanation: "This is a fun movie-like program with lots of information about the history of the Olympics. The code is also clean and well organized."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/mountain-climbing/5644819956056064",
+                                title: "Mountain Climbing",
+                                authorName: "Inner Flame",
+                                authorKaid: "https://www.khanacademy.org/profile/kaid_888195786717097566221523",
+                                explanation: "This program features a nice graphic of mountain climbing with well-commented code. We also liked the user-interactive features."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/ichbinzoees-contest-entry-for-sports/5218670315388928",
+                                title: "ichbinzoee's contest entry for \"Sports\"!",
+                                authorName: "ichbinzoee",
+                                authorKaid: "kaid_1095090244482334342325043",
+                                explanation: "We liked this program's simple and minimalistic set of graphics The code is well-commented and very organized."
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Music",
+                    link: "https://www.khanacademy.org/computer-programming/contest-music/4542789552062464",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>Music is something that different cultures have been producing for centuries. Although nobody knows the exact origin, it's interesting to see how it has changed over time. For this contest, you will create a program that is representative of music in your life. Is it a favorite instrument? song? band? Has music impacted your life in a positive way?</p><p>For this contest, we will be accepting both HTML/CSS and PJS projects. If you would like to submit an HTML entry, visit the <a href = 'https://www.khanacademy.org/computer-programming/contest-music-webpage-submissions/5894925149945856' target = '_blank'>HTML Entry Page</a>.</p><p>Need some inspiration? <a href = 'https://simple.wikipedia.org/wiki/List_of_musical_instruments' target = '_blank'>Here's</a> a list of musical instrument you may want to start with. The deadline is June 21st, 2020. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. JS entries should be submitted as a spin-off of this project, HTML entries should be submitted as a spin-off of the HTML entry page. There will be at least one winner per skill bracket for each language. The selected winners will receive a Golden Winston.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!</p><p>Additional questions? Visit the <a href=\"https://www.khanacademy.org/computer-programming/kacp-challenge-council/5745407636209664\" target=\"_blank\">FAQ page</a> or post a new Question below this project if your question is not yet listed.</p>",
+                    deadline: "June 21, 2020",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/hexatone-alpha-version/6580189356703744",
+                                title: "HexaTone Alpha version",
+                                authorName: "Kiefer",
+                                authorKaid: "kaid_250374816135604872528977",
+                                explanation: "This program features a very creative game concept! (sound wave + maze + puzzle = cool) The code was well commented and the walk-through mode was very well done!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/circular-rhythm-music-contest/6183917205929984",
+                                title: "Circular Rhythm",
+                                authorName: "SKY",
+                                authorKaid: "kaid_59991837997505661983736",
+                                explanation: "This program has a very clean, and simple to use interface with a clever way to create music measures. The code was clear and overall very well done!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/3d-marble-machine-instrument-animated/4522719984041984",
+                                title: "3D Marble Machine instrument",
+                                authorName: "Ꚃ 𝚎 ə ɱ υ ട",
+                                authorKaid: "kaid_241820857726192144106949",
+                                explanation: "This program is  amazingly detailed, and we particularly liked the blueprint and vintage film wheel effects!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/music-my-entry/6710062291173376",
+                                title: "Music - My Entry",
+                                authorName: "KING",
+                                authorKaid: "kaid_1060696438578062597752457",
+                                explanation: "This program has a nice entry animation, followed by an easy-to-follow layout and lots of great information!"
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/a-jazz-space-contest-music/6275453592092672",
+                                title: "A Jazz Space",
+                                authorName: "E A",
+                                authorKaid: "kaid_583062821190031590442234",
+                                explanation: "This is a beautifully rendered, intimate stage. The light effects are great, and there is an excellent use of functions with position and other arguments to layout objects in the scene."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/musical-journeycompleted/6047782735527936",
+                                title: "My Musical Journey",
+                                authorName: "Stephen",
+                                authorKaid: "kaid_405634916917547030607720",
+                                explanation: "This is a very well done, personal slideshow! The program has a good use of coordinate transforms to lay out objects, and includes interesting comments throughout!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/a-guy-with-a-beat/5346892486098944",
+                                title: "A guy with a beat",
+                                authorName: "𝑺𝒑𝒂𝒄𝒆𝑹𝒂𝒏𝒈𝒆𝒓",
+                                authorKaid: "kaid_237663565377101144744119",
+                                explanation: "This program features an excellent graphic, with good uses of the beginShape, endShape, and vertex functions."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/the-benefits-of-music/4756237836500992",
+                                title: "The benefits of music",
+                                authorName: "JI Peter",
+                                authorKaid: "kaid_1175870400120187249578440",
+                                explanation: "This program has a very nice, clean design and it features a good use of jQuery for the multiple pages!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/stage-performance/5919885561511936",
+                                title: "Stage Performance",
+                                authorName: "LILI <3",
+                                authorKaid: "kaid_1170291324740509702848892",
+                                explanation: "This program has good rendering, with organized, well commented code. The visuals are very detailed, and the curtain opening was nice touch!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/spin-off-contest-musicwip/4574202636091392",
+                                title: "Spin-off Contest: MusicWIP",
+                                authorName: "Poorvi Singhai",
+                                authorKaid: "kaid_1120439608193202931172740",
+                                explanation: "This is a beautiful drawing with significant detail. The program makes good use of subroutines as well as begin/endShape."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/dj-for-contest-music/4612692089323520",
+                                title: "Dj for: Contest Music",
+                                authorName: "purplebanane12",
+                                authorKaid: "kaid_484978767174156351727368",
+                                explanation: "Music is something to participate in, and we liked how this program had the user interact with it!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/my-favorite-music/4836898452160512",
+                                title: "My Favorite Music",
+                                authorName: "bookwhiz",
+                                authorKaid: "kaid_816058200486182186340658",
+                                explanation: "This program has good use of stylesheet, as well as a clean layout!"
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Utopia",
+                    link: "https://www.khanacademy.org/computer-programming/contest-utopia/6536915735560192",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>In our world today we often see things that we wish could be different. An ideal society in which all of those issues are fixed is called a Utopia. For this contest you are going to create a program that creatively represents what a Utopia would look like to you. Most Utopian fantasies focus on ecological, economical, scientific, or technical issues; as well as many others. Feel free to come up with your own ideas as well.</p><p>Let's try to keep all ideas as noncontroversial and as appropriate as possible. It's always a good idea to consult the Khan Academy guidelines or just use a different idea if you aren't sure whether or not your current one will be acceptable on Khan Academy. </p><p>The deadline is April 21st, 2020. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. Projects should be submitted as a spin-off of this project. The top winners in each skill bracket will receive a Golden Winston.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!</p><p>Additional questions? Visit <a href=\"https://www.khanacademy.org/computer-programming/kacp-challenge-council/5745407636209664\" target=\"_blank\">FAQ page</a> or post a new Question below this project if your question is not yet listed.</p>",
+                    deadline: "April 21, 2020",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/a-new-journey-utopia-episode-1/6456010180542464",
+                                title: "A New Journey | UTOPIA (Episode 1?)",
+                                authorName: "Jam0708",
+                                authorKaid: "kaid_684064714307603949888221",
+                                explanation: "This animation/short film is very well put together! It tells a nice story, has great transitions, and includes excellent visuals and animations!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/exoplanet-utopia/4933010526584832",
+                                title: "Exoplanet Utopia",
+                                authorName: "Admiral Betasin",
+                                authorKaid: "kaid_1077917480962745262578171",
+                                explanation: "The high-quality graphics and blended colors are excellent in this program!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/future-animated/4673618358976512",
+                                title: "Future (Animated)",
+                                authorName: "Gray Wolf",
+                                authorKaid: "kaid_639291037700385781852565",
+                                explanation: "This is a very well-made graphic with cool animated elements. The colors and designs are very well thought out and look amazing!"
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/utopia-a-place-or-a-mindset/5004927614861312",
+                                title: "Utopia: A Place . . . Or a Mindset?",
+                                authorName: "SavannahRW01",
+                                authorKaid: "kaid_444733413407583859938140",
+                                explanation: "This program gave users two \"paths\" to choose from, and both had beautiful graphics, great information, and advanced shapes!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/scientifictechnological-utopia/5843685377589248",
+                                title: "Scientific/Technological Utopia",
+                                authorName: "ＶＵＬＴＵＲＮＵＳ",
+                                authorKaid: "kaid_737622970740621562808796",
+                                explanation: "This is a very creative and well put-together graphic, with clean and commented code!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/utopia-in-the-distance/5869283367862272",
+                                title: "Utopia in the Distance",
+                                authorName: "William Wang",
+                                authorKaid: "kaid_1060696438578062597752457",
+                                explanation: "Beautifully made graphic with lots of great information! The detail is very impressive!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/booktopia/6156125426302976",
+                                title: "Booktopia!",
+                                authorName: "Bookworm Boy",
+                                authorKaid: "kaid_482241566161004342823631",
+                                explanation: "This is a nice animated graphic with well-commented code! A very nice layout with some added creativity and futuristic animation."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/photo-from-the-utopian-jungle/6396257426489344",
+                                title: "Photo From The UTOPIAN JUNGLE",
+                                authorName: "Colored Feather",
+                                authorKaid: "kaid_1205320995243119760368790",
+                                explanation: "This is a very fun and colorful graphic! The use of the camera to lead into the image of the utopia was very creative. Well-commented and organized code!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/what-is-your-utopia/5865658450591744",
+                                title: "What is your Utopia?",
+                                authorName: "Elemental Phoenix",
+                                authorKaid: "kaid_966740337367540339538541",
+                                explanation: "This program was very well done, with well-commented code, complexity, and user interaction!"
+                            }
+                        ]
+                    }
+                },
+                {
+                    title: "Arcade Game",
+                    link: "https://www.khanacademy.org/computer-programming/contest-arcade-game/6099185963122688",
+                    imageFile: "latest.png",
+                    isCurrent: false,
+                    contestIsVisible: true,
+                    resultsAreVisible: true,
+                    description: "<p>As the new year begins, it's time to revisit the classics---Arcade Games! For this contest, create a program that resembles a traditional arcade or retro game. Your game can be a detailed replica, or you can create your own version of a traditional arcade game. Your program should include comments explaining how to play your game, a brief history of the game, and descriptions of any changes you made to the original.</p><p>If you're a beginner, you're also welcome to make a graphic of the game, or a program explaining the history of the industry or a specific game. You may also want to pick one of the earliest games, as those are typically less complicated.</p><p>Not sure where to start? Check out our tutorials on <a href=\"https://www.khanacademy.org/computing/computer-programming/programming-games-visualizations\" target=\"_blank\">Games & Visualizations</a>. Not sure which game to pick? Here's <a href=\"https://en.wikipedia.org/wiki/Arcade_game#List_of_highest-grossing_games\" target=\"_blank\">a list</a> of the most popular arcade games.</p><p>Deadline is February 21st, 2020. We will judge in the week after that, and award based on creativity, complexity, and clean, commented code. Projects should be submitted as a spin-off of this project. The top winners in each skill bracket will receive a Golden Winston.</p><p>Attribute any parts of your code you didn't write, and most importantly, have fun!",
+                    deadline: "February 21, 2020",
+                    results: {
+                        advanced: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/qbert/6746501882593280",
+                                title: "Q*Bert",
+                                authorName: "Fitzgerald",
+                                authorKaid: "kaid_1152728431508830264593196",
+                                explanation: "This program is a great reproduction of the original Q*Bert game! The graphics and gameplay are excellent, and the code is very high quality and well structured."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/breakout/6637034814324736",
+                                title: "Breakout",
+                                authorName: "Jam0708",
+                                authorKaid: "kaid_684064714307603949888221",
+                                explanation: "This Breakout game has incredible graphics, a nice pixel font, and is very fun to play! It is an amazing and creative twist on the original."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/pinball/4982585229852672",
+                                title: "Pinball",
+                                authorName: "HSstudent16",
+                                authorKaid: "kaid_1123757839545756257758948",
+                                explanation: "This program offers a unique Khan Academy-themed version of the classic pinball machine. The program also has an incredible use of complex collisions and is well commented. Excellent job!"
+                            }
+                        ],
+                        intermediate: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/mario-escape/5064169101475840",
+                                title: "Mario Escape!",
+                                authorName: "~TheTomato~",
+                                authorKaid: "kaid_715640565258207648742605",
+                                explanation: "This program has nice pixel art graphics, is very unique, and is fun to play!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/pong/5832483535863808",
+                                title: "Pong",
+                                authorName: "6Q",
+                                authorKaid: "kaid_1203254349917608655460142",
+                                explanation: "This program is a nice interpretation of the classic Pong game. The program is well commented, and has an increase in difficulty from the original Pong."
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/pong2/5307612184723456",
+                                title: "Pong2",
+                                authorName: "John Smith",
+                                authorKaid: "kaid_414091654426022932799988",
+                                explanation: "This program has some creative twists from the original Pong, with a a useful functionality that lets the user select their difficulty level. Very well done!"
+                            }
+                        ],
+                        beginner: [
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/sonic-the-hedgehog-graphic/4957336192958464",
+                                title: "Sonic the Hedgehog (graphic)",
+                                authorName: "nibbl3s",
+                                authorKaid: "kaid_817237411924413389297036",
+                                explanation: "This program has nice graphics, uses good comments, and has a good use of variables and loops. Nicely done!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/the-history-of-arcade-games/6470862365540352",
+                                title: "The History of Arcade Games",
+                                authorName: "Beatrice S.",
+                                authorKaid: "kaid_802686983899378875225304",
+                                explanation: "This program is a nice, informative clicker slideshow with clean code and interesting visuals. Great job!"
+                            },
+                            {
+                                link: "https://www.khanacademy.org/computer-programming/entry-to-contest-arcade-game/5106922710646784",
+                                title: "Entry to \"Contest: Arcade Game\"",
+                                authorName: "Omar H.",
+                                authorKaid: "kaid_698515328654741609857444",
+                                explanation: "This is a very fun and unique program with a nice compilation of arcade-style games."
                             }
                         ]
                     }
@@ -2497,7 +3231,7 @@
                 {
                     title: "Favorite City",
                     link: "https://www.khanacademy.org/computer-programming/contest-favorite-city/4598758826868736",
-                    imageFile: "latest.png",
+                    imageFile: "5811055676899328.png",
                     isCurrent: false,
                     contestIsVisible: true,
                     resultsAreVisible: true,
@@ -2775,7 +3509,7 @@
             function showContest(i) {
                 var box = document.getElementById("contest");
                 
-                box.innerHTML = "<h1 class=\"heading\">" + contests[i].title + "</h1><div class=\"contest-info\"><h3>Description</h3>" + contests[i].description + "<h3>Deadline</h3><p>All projects must be submitted by " + contests[i].deadline + ".</p><a href=\"" + contests[i].link + "\" target=\"_blank\" class=\"contest-link\">View contest page here.</a></div>";
+                box.innerHTML = "<h1 class=\"heading\">" + contests[i].title + "</h1><div class=\"contest-info\"><h3>Description</h3>" + contests[i].description + "<h3>Deadline</h3><p>All projects must be submitted by " + contests[i].deadline + ".</p><a href=\"" + contests[i].link + "\" target=\"_blank\" class=\"contest-link\">View contest page and submit your entry here.</a></div>";
                 
                 if (contests[i].resultsAreVisible == true) {
                     
@@ -2830,7 +3564,7 @@
                             
                             content += "<p class=\"explanation\">"; // Add the paragraph, even if the entry doesn't have an explanation, for the purposes of formatting
                             if (winners[b].explanation != "") {
-                                content += "<strong>Why we chose this program: </strong><br>";
+                                content += "<strong>Comments from the judges: </strong><br>";
                                 content += winners[b].explanation;
                             }
                             content += "</p></div>"
@@ -2929,11 +3663,41 @@
         
         <!-- Populate Members page -->
         <script>
+        /*
+            New User Template:
+            
+                {
+                    name: "",
+                    kaid: "",
+                    avatar: "",
+                    isCurrentMember: true
+                }
+                
+                <img src="https://www.kasandbox.org/programming-images/avatars/leaf-yellow.png">
+        */
             var members = [
                 {
                     name: "Abigail Martin",
                     kaid: "kaid_548608925119405261047254",
                     avatar: "/creatures/Hopper-Cool.png",
+                    isCurrentMember: true
+                },
+                {
+                    name: "Allison (tAG54)",
+                    kaid: "kaid_1129219992578921989012678",
+                    avatar: "/avatars/leafers-sapling.png",
+                    isCurrentMember: true
+                },
+                {
+                    name: "The Anonymous",
+                    kaid: "kaid_229533926594864627945262",
+                    avatar: "/avatars/piceratops-tree.png",
+                    isCurrentMember: true
+                },
+                {
+                    name: "budster the dingo",
+                    kaid: "kaid_1063314115048600759228780",
+                    avatar: "/avatars/duskpin-tree.png",
                     isCurrentMember: true
                 },
                 {
@@ -2955,15 +3719,39 @@
                     isCurrentMember: true
                 },
                 {
+                    name: "FreshBakedPizza",
+                    kaid: "kaid_95345503796848742553382",
+                    avatar: "/creatures/Hopper-Cool.png",
+                    isCurrentMember: true
+                },
+                {
                     name: "Jett Burns",
                     kaid: "kaid_455920429074646065838008",
                     avatar: "/creatures/Hopper-Cool.png",
                     isCurrentMember: true
                 },
                 {
-                    name: "ɭəχɪɔʘή",
+                    name: "Larry Serflaten",
+                    kaid: "kaid_271442154897019790150825",
+                    avatar: "/avatars/leaf-yellow.png",
+                    isCurrentMember: true
+                },
+                {
+                    name: "Lexicon",
                     kaid: "kaid_59165442734615230667253",
                     avatar: "/avatars/starky-sapling.png",
+                    isCurrentMember: true
+                },
+                {
+                    name: "LittleMoose",
+                    kaid: "kaid_705925867208151877881149",
+                    avatar: "/avatars/starky-sapling.png",
+                    isCurrentMember: true
+                },
+                {
+                    name: "Loyalty",
+                    kaid: "kaid_716488551714127278797372",
+                    avatar: "/avatars/leaf-red.png",
                     isCurrentMember: true
                 },
                 {
@@ -2973,16 +3761,28 @@
                     isCurrentMember: false
                 },
                 {
+                    name: "Mitrue",
+                    kaid: "kaid_933535768996352608848582",
+                    avatar: "/creatures/Hopper-Cool.png",
+                    isCurrentMember: true
+                },
+                {
                     name: "Nicholas",
                     kaid: "kaid_1193517489996308877054826",
                     avatar: "/avatars/duskpin-tree.png",
                     isCurrentMember: true
                 },
                 {
-                    name: "The Falcoηer",
+                    name: "pinkpuppy22",
+                    kaid: "kaid_1180834839290345292639833",
+                    avatar: "/creatures/Winston.png",
+                    isCurrentMember: true
+                },
+                {
+                    name: "SilverCat",
                     kaid: "kaid_475617089673984066159228",
                     avatar: "/avatars/leaf-grey.png",
-                    isCurrentMember: true
+                    isCurrentMember: false
                 }
             ];
             
